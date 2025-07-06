@@ -37,7 +37,7 @@ resource "aws_subnet" "private_subnets" {
   availability_zone = element(var.us_availability_zone, count.index)
 
   tags = {
-    Name = "dev-proj-private-subnet-${count.index + 1}"
+    Name = "private-subnet-${count.index + 1}"
   }
 }
 
