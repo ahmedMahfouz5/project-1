@@ -4,4 +4,5 @@ module "networking" {
   vpc_name             = var.vpc_name
   cidr_public_subnet   = var.cidr_public_subnet
   us_availability_zone = var.us_availability_zone
+  cidr_private_subnet  = var.cidr_private_subnet
 }
