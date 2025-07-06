@@ -42,7 +42,7 @@ resource "aws_subnet" "private_subnets" {
 }
 
 # Setup Internet Gateway
-resource "aws_internet_gateway" "dev_proj_1_public_internet_gateway" {
+resource "aws_internet_gateway" "public_internet_gateway" {
   vpc_id = aws_vpc.vpc.id
   tags = {
     Name = "dev-proj-1-igw"
