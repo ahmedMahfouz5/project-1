@@ -45,7 +45,7 @@ resource "aws_subnet" "private_subnets" {
 resource "aws_internet_gateway" "public_internet_gateway" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name = "dev-proj-1-igw"
+    Name = "internet_gateway"
   }
 }
 
