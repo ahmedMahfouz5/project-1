@@ -67,3 +67,19 @@ resource "aws_route_table_association" "dev_proj_1_public_rt_subnet_association"
   subnet_id      = aws_subnet.public_subnets[count.index].id
   route_table_id = aws_route_table.public_route_table.id
 }
+
+# Private Route Table
+resource "aws_route_table" "private_subnets" {
+  vpc_id = aws_vpc.vpc.id
+  #depends_on = [aws_nat_gateway.nat_gateway]
+  tags = {
+    Name = "dev-proj-1-private-rt"
+  }
+}
+
+# Private Route Table and private Subnet Association
+resource "aws_route_table_association" "private_rt_subnet_association" {
+  count          = length(aws_subnet.private_subnets)
+  subnet_id      = aws_subnet.private_subnets[count.index].id
+  route_table_id = aws_route_table.private_subnets.id
+}
