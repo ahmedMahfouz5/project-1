@@ -57,7 +57,7 @@ resource "aws_route_table" "public_route_table" {
     gateway_id = aws_internet_gateway.dev_proj_1_public_internet_gateway.id
   }
   tags = {
-    Name = "dev-proj-1-public-rt"
+    Name = "public-rt"
   }
 }
 
