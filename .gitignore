@@ -1,0 +1,24 @@
+# Terraform Files
+.terraform/        # Terraform's working directory, stores providers, modules, state backups
+*.tfplan           # Terraform plan files (binary output)
+*.tfstate          # Terraform state file (contains sensitive info, managed by Terraform)
+*.tfstate.backup   # Backup of the state file (created on apply)
+.terraform.lock.hcl # Dependency lock file (managed by Terraform init)
+crash.log          # Terraform crash log (if a crash occurs)
+override.tf        # Temporary override file (often used for debugging)
+override_*.tf
+*.tfvars.json      # Variable definition files (if they contain sensitive data)
+*.tfvars           # Variable definition files (if they contain sensitive data)
+
+# IDE / Editor specific files (common ones)
+.idea/             # IntelliJ/WebStorm IDE files
+.vscode/           # VS Code settings and launch configurations
+*.iml              # IntelliJ IDEA module files
+*.swp              # Vim swap files
+*~                 # Backup files created by various editors
+
+# Operating System Files
+.DS_Store          # macOS folder metadata
+Thumbs.db          # Windows thumbnail cache
+ehthumbs.db        # Windows thumbnail cache
+.terraformrc       # Terraform CLI configuration file (can contain sensitive info)
