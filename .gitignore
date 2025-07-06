@@ -1,24 +1,42 @@
-# Terraform Files
-.terraform/        # Terraform's working directory, stores providers, modules, state backups
-*.tfplan           # Terraform plan files (binary output)
-*.tfstate          # Terraform state file (contains sensitive info, managed by Terraform)
-*.tfstate.backup   # Backup of the state file (created on apply)
-.terraform.lock.hcl # Dependency lock file (managed by Terraform init)
-crash.log          # Terraform crash log (if a crash occurs)
-override.tf        # Temporary override file (often used for debugging)
-override_*.tf
-*.tfvars.json      # Variable definition files (if they contain sensitive data)
-*.tfvars           # Variable definition files (if they contain sensitive data)
+# Created by https://www.toptal.com/developers/gitignore/api/terraform
+# Edit at https://www.toptal.com/developers/gitignore?templates=terraform
 
-# IDE / Editor specific files (common ones)
-.idea/             # IntelliJ/WebStorm IDE files
-.vscode/           # VS Code settings and launch configurations
-*.iml              # IntelliJ IDEA module files
-*.swp              # Vim swap files
-*~                 # Backup files created by various editors
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
 
-# Operating System Files
-.DS_Store          # macOS folder metadata
-Thumbs.db          # Windows thumbnail cache
-ehthumbs.db        # Windows thumbnail cache
-.terraformrc       # Terraform CLI configuration file (can contain sensitive info)
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+.terraform.lock.hcl
+
+# Exclude all .tfvars files, which are likely to contain sensitive data, such as
+# password, private keys, and other secrets. These should not be part of version
+# control as they are data points which are potentially sensitive and subject
+# to change depending on the environment.
+*.tfvars
+*.tfvars.json
+
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do wish to add to version control using negated pattern
+# !example_override.tf
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+# example: *tfplan*
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# End of https://www.toptal.com/developers/gitignore/api/terraform
