@@ -20,3 +20,13 @@ variable "cidr_private_subnet" {
   type        = list(string)
   description = "Private Subnet CIDR values"
 }
+
+variable "ec2_ami_id" {
+  type        = string
+  description = " Amazon Linux 2023 instance us-east-1 "
+}
+
+variable "public_key" {
+  type        = string
+  description = "DevOps Project 1 Public key for EC2 instance"
+}
